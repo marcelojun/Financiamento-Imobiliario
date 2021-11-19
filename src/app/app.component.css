@@ -1,0 +1,17 @@
+.bg {
+    background-image: url("/assets/images/final.jpg");
+    opacity: 50%;
+    height: 34.1rem;
+    width: auto;
+    margin-top: -16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: 0px -32px;
+}
+
+.btn {
+    margin-left: 69rem;
+    margin-top: -5rem;
+}

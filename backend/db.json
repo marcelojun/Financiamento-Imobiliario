@@ -1,0 +1,25 @@
+{
+  "Proposta": [
+    {
+      "imovel": "Comercial",
+      "renda": "R$ 1.500",
+      "valor": "R$ 100.000",
+      "entrada": "R$ 20.000",
+      "parcelas": "100",
+      "primeira_parcela": 1296,
+      "status": "Reprovado",
+      "valor_financiado": 80000,
+      "nome": "Thiago",
+      "profissão": "Adm",
+      "cpf": "552.220.988-99",
+      "email": "thiago@tec.com",
+      "nascimento": "1980-12-09",
+      "celular": "(11)95901-3360",
+      "cidade": "Santos",
+      "estado": "SP",
+      "cep": "08888-888",
+      "data": "2021-11-16T19:21:40.903Z",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+<div class="test">
+    <h3 class="m-5 me-5 ">Histórico de Propostas</h3>
+
+    <div>
+        <table class="container table-responsive">
+            <tr id="titule">
+
+                <th>Nome do proponente</th>
+                <th>Data de simulação</th>
+                <th>Valor do imóvel</th>
+                <th>Números de parcelas</th>
+            </tr>
+            <tr *ngFor="let item of listaHistorico">
+                <td>{{item.nome}}</td>
+                <td>{{item.data|date:"short"}}</td>
+                <td>{{item.valor_financiado|currency:"BRL"}}</td>
+                <td>{{item.parcelas}}</td>
+                <td>
+                    <a><img routerLink="" src="/assets/images/eye.svg" class="text-success" width="20" height="20" title="Visualizar" alt=""></a>
+                </td>
+                <td>
+                    <a (click)="open(mymodal, item.id)"><img src="/assets/images/trash-can.svg" width="20" height="20" title="Excuir" alt=""></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!--  -->
+<ng-template #mymodal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Confirmação</h4>
+    </div>
+    <div class="modal-body">
+        <h4>Você realmente deseja deletar essa proposta ?</h4>
+        <small>Propostas deletadas, não poderão ser mais visualizadas, esse procedimento não é reverssível.</small>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('OK')">Ok</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cancel')">Cancel</button>
+    </div>
+</ng-template>

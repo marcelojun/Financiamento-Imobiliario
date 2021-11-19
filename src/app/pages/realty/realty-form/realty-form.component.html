@@ -1,0 +1,80 @@
+<div class="test">
+    <div class="row mb-4">
+        <div class="col-md">
+            <h1 class="h2 border-left pl-2">DADOS DO IMÓVEL</h1>
+        </div>
+    </div>
+</div>
+
+<form class="row g-3" id="form" [formGroup]="formr">
+    <div class="col-md-5">
+        <label for="imovel" class="form-label" aria-label="Filtro">Tipo do Imóvel</label>
+        <select role="tipo" class="form-control" formControlName="imovel">
+            <option >Residencial</option>
+            <option >Comercial</option>
+            <option >Galpões Industriais</option>
+        </select>
+        <div *ngIf="!imovel.pristine && imovel.errors || imovel?.touched">
+            <p *ngIf="imovel.errors?.required">
+                Campo Obrigatório.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <label for="renda" class="form-label" id="renda" aria-label="Renda Mensal">Renda Mensal</label>
+        <input role="text" class="form-control" mask="separator" prefix="R$ " thousandSeparator="." suffix=",00" formControlName="renda" placeholder="Apenas numeros">
+        <div *ngIf="!renda.pristine && renda.errors || renda?.touched">
+            <p *ngIf="renda.errors?.required">
+                Campo Obrigatório.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-5">
+        <label for="valor" class="form-label" aria-label="Valor do Imovel">Valor do Imóvel</label>
+        <input role="text" class="form-control" formControlName="valor" prefix="R$ " mask="separator" thousandSeparator="." suffix=",00" placeholder="Apenas numeros">
+        <div *ngIf="!valor.pristine && valor.errors || valor?.touched">
+            <p *ngIf="valor.errors?.required">
+                Campo Obrigatório.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-5">
+        <label for="entrada" class="form-label" aria-label="Valor da entrada">Valor da Entrada</label>
+        <input role="text" class="form-control" formControlName="entrada" prefix="R$ " mask="separator" thousandSeparator="." suffix=",00" placeholder="Apenas numeros">
+        <div *ngIf="!entrada.pristine && entrada.errors || entrada?.touched">
+            <p *ngIf="entrada.errors?.required">
+                Campo Obrigatório.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-5">
+        <label for="parcelas" class="form-label" aria-label="Quantidade de Parcelas">Quantidade de Parcelas</label>
+        <input role="text" class="form-control" formControlName="parcelas" suffix=" vezes" mask="000" placeholder="Apenas numeros">
+        <div *ngIf="!parcelas.pristine && parcelas.errors || parcelas?.touched">
+            <p *ngIf="parcelas.errors?.required">
+                Campo Obrigatório.
+            </p>
+            <p *ngIf="parcelas.errors?.muitasParcelas">
+                Excede numero maximo de parcelas
+            </p>
+        </div>
+    </div>
+
+    <div class="col-5"> </div>
+
+    <div class="col-5" id="cancel">
+        <a routerLink="/home" class="btn btn-warning">Cancelar</a>
+    </div>
+
+    <div class="col-5 mx-auto">
+        <button role="button" class="btn btn-primary" [ngClass]="{'disabled': this.formr.invalid}" (click)="validarDados()">SIMULAR</button>
+    </div>
+
+    <p *ngIf='mensagem != ""'>
+        {{this.mensagem}}
+    </p>
+</form>
