@@ -3,6 +3,7 @@ import { RealtyService } from './../../realty/realty-form/shared/realty.service'
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { HistoricViewComponent } from '../historic-view/historic-view.component';
 
 @Component({
   selector: 'app-historic-list',
@@ -27,9 +28,15 @@ export class HistoricListComponent implements OnInit {
     });
   }
 
-  open(content: any, id: number) {
+  openDelete(content: any, id: number) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       if (result == "OK") this.delete(id);
     });
+  }
+
+  openView(item:Proposta) {
+    this.rs.enviaHistoric(item);
+
+    this.modalService.open(HistoricViewComponent);
   }
 }

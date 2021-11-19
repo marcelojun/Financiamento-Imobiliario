@@ -12,6 +12,7 @@ export class RealtyService {
   baseUrl = "http://localhost:3001/Proposta"
 
   static model: ApprovedModel;
+  static historic: Proposta;
 
   constructor(private http: HttpClient) { }
 
@@ -23,16 +24,24 @@ export class RealtyService {
     return RealtyService.model;
   }
 
+  enviaHistoric(dados: Proposta) {
+    RealtyService.historic = dados;
+  }
+
+  recuperaHistoric(): Proposta {
+    return RealtyService.historic;
+  }
+
   salvarDados(proposta: Proposta) {
-    console.log(Proposta)
     return this.http.post<Proposta>(this.baseUrl, proposta).subscribe(response => console.log(response));
   }
+
   mostrarDados(): Observable<Proposta[]> {
     return this.http.get<Proposta[]>(this.baseUrl)
   }
+
   deletaDados(id:number) {
     var urlDel= this.baseUrl + `/${id}`
-    console.log(urlDel)
     return this.http.delete(urlDel);
   }
 }

@@ -16,16 +16,16 @@
                 <td>{{item.valor_financiado|currency:"BRL"}}</td>
                 <td>{{item.parcelas}}</td>
                 <td>
-                    <a><img routerLink="" src="/assets/images/eye.svg" class="text-success" width="20" height="20" title="Visualizar" alt=""></a>
+                    <a (click)="openView(item)"><img src="/assets/images/eye.svg" class="text-success" width="20" height="20" title="Visualizar" alt=""></a>
                 </td>
                 <td>
-                    <a (click)="open(mymodal, item.id)"><img src="/assets/images/trash-can.svg" width="20" height="20" title="Excuir" alt=""></a>
+                    <a (click)="openDelete(mymodal, item.id)"><img src="/assets/images/trash-can.svg" width="20" height="20" title="Excuir" alt=""></a>
                 </td>
             </tr>
         </table>
     </div>
 </div>
-<!--  -->
+<!--Modal Delete  -->
 <ng-template #mymodal let-modal>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">Confirmação</h4>
