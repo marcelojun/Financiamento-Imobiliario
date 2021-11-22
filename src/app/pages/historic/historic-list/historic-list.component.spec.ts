@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HistoricListComponent } from './historic-list.component';
@@ -8,7 +9,8 @@ describe('HistoricListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HistoricListComponent ]
+      declarations: [ HistoricListComponent ],
+      imports:[HttpClientModule]
     })
     .compileComponents();
   });

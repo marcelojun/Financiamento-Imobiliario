@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { ApprovedModel } from 'src/app/pages/approved/approved.form/shared/approvedModel';
 
@@ -7,7 +8,9 @@ describe('RealtyService', () => {
   let srv: RealtyService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports:[HttpClientModule]
+    });
     srv = TestBed.inject(RealtyService);
   });
 

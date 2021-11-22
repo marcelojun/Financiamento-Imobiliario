@@ -9,7 +9,7 @@ export class Proposta {
         public status: string,
         public valor_financiado: number,
         public nome: string,
-        public profissão: string,
+        public profissao: string,
         public cpf: string,
         public email: string,
         public nascimento: Date,
@@ -27,7 +27,7 @@ export class Proposta {
         this.status = status;
         this.valor_financiado = valor_financiado;
         this.nome = nome;
-        this.profissão = profissão;
+        this.profissao = profissao;
         this.cpf = cpf;
         this.email = email;
         this.nascimento = nascimento;

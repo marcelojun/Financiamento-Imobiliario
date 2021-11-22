@@ -1,18 +1,25 @@
+import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ClientFormComponent } from './client-form.component';
 
+
 describe('ClientFormComponent', () => {
   let component: ClientFormComponent;
   let fixture: ComponentFixture<ClientFormComponent>;
-
+  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ClientFormComponent ],
       imports: [
         FormsModule, 
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule,
+        RouterModule.forRoot([]),
+        RouterTestingModule
       ]
     })
     .compileComponents();
@@ -24,9 +31,4 @@ describe('ClientFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    component.form.controls['nascimento'].setValue('2010-05-04');
-
-    expect(component).toBeTruthy();
-  });
 });

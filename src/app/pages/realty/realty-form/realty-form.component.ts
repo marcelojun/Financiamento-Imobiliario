@@ -96,6 +96,7 @@ export class RealtyFormComponent implements OnInit {
       cliente.estado,
       cliente.cep
       );
+      
       this.rs.salvarDados(proposta);
       
           

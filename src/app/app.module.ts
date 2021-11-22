@@ -10,11 +10,13 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ],
   imports: [
+    
     NgbModule,
     RouterModule,
     BrowserModule,
@@ -22,7 +24,8 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NgxMaskModule.forRoot({dropSpecialCharacters:false})
+    NgxMaskModule.forRoot({dropSpecialCharacters:false}),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

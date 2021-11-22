@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import * as printJS from "print-js";
 import { Proposta } from "../../realty/realty-form/shared/proposta.model";
 import { RealtyService } from "../../realty/realty-form/shared/realty.service";
 
@@ -17,33 +18,8 @@ export class HistoricViewComponent implements OnInit {
         this.historico = this.rs.recuperaHistoric();
     }
 
-    print(): void {
-        let printContents, popupWin;
-        printContents = document?.getElementById('print-section')?.innerHTML;
-        popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
-        popupWin?.document.open();
-        popupWin?.document.write(`
-          <html>
-            <head>
-              <title>Print tab</title>
-              <style>
-              #print-section {
-                margin-left: 2rem;
-            }
-            
-            .mt-2 {
-                font-weight: 800;
-                text-decoration: underline;
-            }
-            
-            .text-success {
-                margin-left: 27rem;
-            }
-              </style>
-            </head>
-        <body onload="window.print();window.close()">${printContents}</body>
-          </html>`
-        );
-        popupWin?.document.close();
+    print(_printable:any,_type:any){
+      printJS({printable:'print-section',type:'html'})
     }
+       
 }

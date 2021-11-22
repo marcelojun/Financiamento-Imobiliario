@@ -13,7 +13,7 @@ export class ApprovedFormComponent implements OnInit {
   
   valorInicialParcela!: string;
   valorTotalFinanciado!: string;
-  RealtyService: any;
+  
 
   constructor() {
   }

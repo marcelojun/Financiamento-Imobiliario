@@ -1,22 +1,23 @@
 <div id="print-section">
 
-    <a (click)="print()"><img src="/assets/images/printer.svg" class="text-success" width="20" height="20" title="Imprimir" alt=""></a>
+    <a onclick="printJS('print-section','html')"><img src="/assets/images/printer.svg" class="text-success" width="20" height="20" title="Imprimir" alt=""></a>
 
-    <table>
-        <h5 class="mt-2">Dados do proponente</h5>
+    <table class="container-fluid" id="proponente">
+        <h5 class="mt-2 ml-1">Dados do proponente</h5>
         <tr class="row">
             <th class="col-4">Nome </th>
             <th class="col-4">Profissão</th>
             <th class="col-4">CPF</th>
-
         </tr>
         <tr class="row">
-
             <td class="col-4">{{historico.nome}}</td>
-            <td class="col-4">555</td>
+            <td class="col-4">{{historico.profissao}}</td>
             <td class="col-4">{{historico.cpf}}</td>
         </tr>
-        <br>
+    </table>
+
+    <table class="container-fluid">
+
         <tr class="row">
             <th class="col-4">Email</th>
             <th class="col-4">Data de Nasc.</th>
@@ -29,7 +30,6 @@
             <td class="col-4">{{historico.nascimento}}</td>
             <td class="col-4">{{historico.cep}}</td>
         </tr>
-        <br>
 
         <tr class="row">
             <th class="col-4">Celular</th>
@@ -39,58 +39,50 @@
         </tr>
 
         <h5 class="mt-2">Dados do imóvel</h5>
-
         <tr class="row">
             <th class="col-4">Tipo do Imovel</th>
             <th class="col-4">Renda Mensal</th>
             <th class="col-4">Valor do imóvel</th>
-
         </tr>
-        <tr class="row">
 
+        <tr class="row">
             <td class="col-4">{{historico.imovel}}</td>
             <td class="col-4">{{historico.renda}}</td>
             <td class="col-4">{{historico.valor}}</td>
         </tr>
-        <br>
 
         <tr class="row">
             <th class="col-6">Valor da Entrada</th>
             <th class="col-4">Parcelas</th>
-
         </tr>
-        <tr class="row">
 
+        <tr class="row">
             <td class="col-6">{{historico.entrada}}</td>
             <td class="col-4">{{historico.parcelas}}</td>
         </tr>
+    </table>
 
+    <table class="container-fluid">
         <h5 class="mt-2"> Dados do Financiamento</h5>
-
         <tr class="row">
             <th class="col-2">Taxa</th>
             <th class="col-5">Valor Financiado</th>
             <th class="col-5">Valor com Juros</th>
-
         </tr>
-        <tr class="row">
 
+        <tr class="row">
             <td class="col-2">7,5 </td>
             <td class="col-5">R$ {{historico.valor_financiado}}</td>
             <td class="col-5"></td>
         </tr>
-        <br>
 
         <tr class="row">
             <th class="col-6">Valor da Primeira Parcela</th>
             <th class="col-6">Status</th>
-
         </tr>
-        <tr class="row">
 
+        <tr class="row">
             <td class="col-6">R$ {{historico.primeira_parcela}}</td>
             <td class="col-6">{{historico.status}}</td>
         </tr>
-
-
     </table>

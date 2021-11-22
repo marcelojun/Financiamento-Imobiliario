@@ -10,7 +10,7 @@
       "status": "Reprovado",
       "valor_financiado": 80000,
       "nome": "Thiago",
-      "profissão": "Adm",
+      "profissao": "Adm",
       "cpf": "552.220.988-99",
       "email": "thiago@tec.com",
       "nascimento": "1980-12-09",
@@ -20,6 +20,27 @@
       "cep": "08888-888",
       "data": "2021-11-16T19:21:40.903Z",
       "id": 2
+    },
+    {
+      "imovel": "Galpões Industriais",
+      "renda": "R$ 3.200",
+      "valor": "R$ 100.000",
+      "entrada": "R$ 20.000",
+      "parcelas": "360",
+      "primeira_parcela": 718.2222222222222,
+      "status": "Aprovado",
+      "valor_financiado": 80000,
+      "nome": "Marcelo",
+      "profissao": "Adminstrador",
+      "cpf": "999.999.999-99",
+      "email": "tec@tec.com",
+      "nascimento": "1979-10-10",
+      "celular": "(99)99999-9999",
+      "cidade": "Pira",
+      "estado": "SP",
+      "cep": "99999-999",
+      "data": "2021-11-22T13:31:21.290Z",
+      "id": 3
     }
   ]
 }
