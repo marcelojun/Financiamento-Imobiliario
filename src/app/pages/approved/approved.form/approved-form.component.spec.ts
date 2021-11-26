@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 import { RealtyService } from '../../realty/realty-form/shared/realty.service';
 
 import { ApprovedFormComponent } from './approved-form.component';
+import { ApprovedModel } from './shared/approvedModel';
 
 describe('ApprovedFormComponent', () => {
   let component: ApprovedFormComponent;
@@ -33,7 +35,5 @@ describe('ApprovedFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  
 });

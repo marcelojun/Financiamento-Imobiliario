@@ -17,7 +17,7 @@ describe('Cliente', () => {
        //Act
       //Assert
       expect(dados.nome).toEqual(nome);
-      expect(dados.profissão).toEqual(profissao);
+      expect(dados.profissao).toEqual(profissao);
       expect(dados.cpf).toEqual(cpf);
       expect(dados.email).toEqual(email);
       expect(dados.nascimento).toEqual(nascimento);

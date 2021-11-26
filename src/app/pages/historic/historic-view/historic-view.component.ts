@@ -19,7 +19,7 @@ export class HistoricViewComponent implements OnInit {
     }
 
     print(_printable:any,_type:any){
-      printJS({printable:'print-section',type:'html'})
+      printJS({printable:'print-sectionc',type:'html'})
     }
        
 }

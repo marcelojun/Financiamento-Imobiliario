@@ -39,13 +39,7 @@ export class RealtyFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.criarFormr()
-    ;
-  }
-
-
-  ngAfterContentChecked() {
-
+    this.criarFormr();
   }
 
   criarFormr() {
@@ -87,7 +81,7 @@ export class RealtyFormComponent implements OnInit {
       valido? 'Aprovado': 'Reprovado',
       this.valorFinanciado,
       cliente.nome,
-      cliente.profissão,
+      cliente.profissao,
       cliente.cpf,
       cliente.email,
       cliente.nascimento,
@@ -127,6 +121,7 @@ export class RealtyFormComponent implements OnInit {
   validaValorEntrada() {
     if (this.valorImovel * 0.2 > this.valorEntrada) this.mensagem = "O valor da entrada não pode ser inferior a 20% do valor total do imóvel"
   }
+
   encaminhoAprovado() {
     var cliente = this.clienteService.RecuperarDado();
     this.rs.enviaDados(this.aprovado);

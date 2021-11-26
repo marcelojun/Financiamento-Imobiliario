@@ -7,15 +7,13 @@ describe('HistoricListComponent', () => {
   let component: HistoricListComponent;
   let fixture: ComponentFixture<HistoricListComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       declarations: [ HistoricListComponent ],
       imports:[HttpClientModule]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(HistoricListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

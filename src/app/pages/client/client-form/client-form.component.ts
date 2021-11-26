@@ -14,8 +14,7 @@ import { ClientService } from './../shared/client.service';
 
 export class ClientFormComponent implements OnInit {
 
-  public form!: FormGroup;
-  
+  public form!: FormGroup;  
 
   constructor(private fb: FormBuilder, private srv: ClientService, private router:Router) {
 
@@ -24,6 +23,7 @@ export class ClientFormComponent implements OnInit {
   ngOnInit(): void {
     this.criarFormu();
   }
+
   enviarDados() {
     const dadosFormulario = this.form!.value;
 
@@ -41,9 +41,6 @@ export class ClientFormComponent implements OnInit {
     
     this.srv.SalvarDado(cliente);
     this.router.navigateByUrl('/realty')
-  }
-
-  ngAfterContentChecked() {
   }
 
   criarFormu() {
@@ -77,22 +74,6 @@ export class ClientFormComponent implements OnInit {
       cep: [null, [Validators.required]]
     })
   }
-
-
-  /* teste() {
-     console.log('form', this.form.invalid);
-     console.log('nome',this.nome?.errors);
-     console.log('profissao',this.profissao?.errors);
-     console.log('cpf',this.cpf?.errors);
-     console.log('email',this.email?.errors);
-     console.log('nascimento',this.nascimento?.errors);
-     console.log('celular',this.celular?.errors);
-     console.log('cidade',this.cidade?.errors);
-     console.log('estado',this.estado?.errors);
-     console.log('cep',this.cep?.errors);
-   }*/
-
-  //Propriedades do formulario para obter os erros
 
   get nome() {
     return this.form.get('nome')
