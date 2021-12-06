@@ -14,17 +14,18 @@ export class HistoricListComponent implements OnInit {
   public listaHistorico!: Proposta[];
   private closeResult!: string;
 
-  constructor(private rs: RealtyService, private http: HttpClient, private modalService: NgbModal) { }
+  constructor(private rs: RealtyService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.rs.mostrarDados().subscribe(response => {
       this.listaHistorico = response
     })
+    this.listaHistorico
   }
 
   delete(id: number) {
     this.rs.deletaDados(id).subscribe(response => {
-      this.listaHistorico = this.listaHistorico.filter(item => item.id !== id);
+      this.listaHistorico = this.listaHistorico.filter(item => item.id!== id);
     });
   }
 

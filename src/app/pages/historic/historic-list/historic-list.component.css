@@ -6,3 +6,9 @@
     font-size: 1.2rem;
     margin-left: 20px;
 }
+
+.sorry {
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(247, 3, 3);
+}

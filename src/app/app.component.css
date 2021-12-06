@@ -14,4 +14,9 @@
 .btn {
     margin-left: 69rem;
     margin-top: -5rem;
+    cursor: pointer;
+}
+
+#logo {
+    cursor: pointer;
 }

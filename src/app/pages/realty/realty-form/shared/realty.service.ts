@@ -33,7 +33,7 @@ export class RealtyService {
   }
 
   salvarDados(proposta: Proposta) {
-    return this.http.post<Proposta>(this.baseUrl, proposta).subscribe(response => console.log(response));
+    return this.http.post<Proposta>(this.baseUrl, proposta);
   }
 
   mostrarDados(): Observable<Proposta[]> {

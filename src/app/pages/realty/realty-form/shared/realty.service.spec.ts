@@ -1,20 +1,37 @@
 
+
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { ApprovedModel } from 'src/app/pages/approved/approved.form/shared/approvedModel';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { Proposta } from './proposta.model';
 
 import { RealtyService } from './realty.service';
+import { mockProposta } from 'src/app/pages/historic/mock/historic-mock';
+import { of } from 'rxjs';
 
 describe('RealtyService', () => {
   let srv: RealtyService;
-
+  let httpServiceMock: jasmine.SpyObj<HttpClient>;
+  let mockHttp: HttpTestingController
+ 
 
   beforeEach(() => {
+    httpServiceMock= jasmine.createSpyObj('HttpClient',['get','delete']);
+    
+    
+
     TestBed.configureTestingModule({
-      imports: [HttpClientModule]
+      imports: [HttpClientModule,
+        HttpClientTestingModule],
+        providers:[
+          RealtyService,
+          {provide: HttpClient, useValue: httpServiceMock}
+        ]
     });
     srv = TestBed.inject(RealtyService);
+    mockHttp= TestBed.inject(HttpTestingController)
   });
 
   it('Teste enviaDados/recuperaDados', () => {
@@ -74,4 +91,32 @@ describe('RealtyService', () => {
     expect(retorn.estado).toEqual('SP');
     expect(retorn.cep).toEqual(9070250);
   });
+
+  it('should be created', () => {
+    const service:RealtyService = TestBed.inject(RealtyService);
+    expect(service).toBeTruthy();
+   });
+
+   it('should MostrarDados',()=>{
+     httpServiceMock.get.and.returnValue(of(mockProposta))
+
+     srv.mostrarDados().subscribe({
+       next:(response:Proposta[])=>{
+          expect(srv.mostrarDados).toHaveBeenCalled()
+       }
+     })  
+   });
+
+   it('should delete',()=>{
+     httpServiceMock.delete.and.returnValue(of(true))
+
+     srv.deletaDados(1).subscribe({
+       next:(response:any)=>{
+         expect(response).toEqual(true)
+         expect(srv.deletaDados).toHaveBeenCalled()
+       }
+     })
+     
+   })
+
 })

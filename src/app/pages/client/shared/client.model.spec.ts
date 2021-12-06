@@ -26,4 +26,5 @@ describe('Cliente', () => {
       expect(dados.estado).toEqual(estado);
       expect(dados.cep).toEqual(cep);
     });
+    
   });

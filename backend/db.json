@@ -1,46 +1,23 @@
 {
-  "Proposta": [
-    {
-      "imovel": "Comercial",
-      "renda": "R$ 1.500",
-      "valor": "R$ 100.000",
-      "entrada": "R$ 20.000",
-      "parcelas": "100",
-      "primeira_parcela": 1296,
-      "status": "Reprovado",
-      "valor_financiado": 80000,
-      "nome": "Thiago",
-      "profissao": "Adm",
-      "cpf": "552.220.988-99",
-      "email": "thiago@tec.com",
-      "nascimento": "1980-12-09",
-      "celular": "(11)95901-3360",
-      "cidade": "Santos",
-      "estado": "SP",
-      "cep": "08888-888",
-      "data": "2021-11-16T19:21:40.903Z",
-      "id": 2
-    },
-    {
-      "imovel": "Galpões Industriais",
-      "renda": "R$ 3.200",
-      "valor": "R$ 100.000",
-      "entrada": "R$ 20.000",
-      "parcelas": "360",
-      "primeira_parcela": 718.2222222222222,
-      "status": "Aprovado",
-      "valor_financiado": 80000,
-      "nome": "Marcelo",
-      "profissao": "Adminstrador",
-      "cpf": "999.999.999-99",
-      "email": "tec@tec.com",
-      "nascimento": "1979-10-10",
-      "celular": "(99)99999-9999",
-      "cidade": "Pira",
-      "estado": "SP",
-      "cep": "99999-999",
-      "data": "2021-11-22T13:31:21.290Z",
-      "id": 3
-    }
-  ]
+    "Proposta": [{
+        "imovel": "Residencial",
+        "renda": "R$ 3.200",
+        "valor": "R$ 100.000",
+        "entrada": "R$ 20.000",
+        "parcelas": "360",
+        "primeira_parcela": 718.2222222222222,
+        "status": "Aprovado",
+        "valor_financiado": 80000,
+        "nome": "Cintia",
+        "profissao": "adm",
+        "cpf": "999.999.999-99",
+        "email": "tec@tec.com",
+        "nascimento": "1980-07-23",
+        "celular": "(11)99999-9999",
+        "cidade": "Santo",
+        "estado": "SP",
+        "cep": "99999-999",
+        "data": "2021-11-29T18:59:47.008Z",
+        "id": 1
+    }]
 }

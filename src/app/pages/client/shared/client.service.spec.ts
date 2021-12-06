@@ -43,4 +43,8 @@ describe('ClientService', () => {
         expect(retorno.cep).toEqual(99);
 
       });
+      it('should be created', () => {
+        const service:ClientService = TestBed.inject(ClientService);
+        expect(service).toBeTruthy();
+       });
     })

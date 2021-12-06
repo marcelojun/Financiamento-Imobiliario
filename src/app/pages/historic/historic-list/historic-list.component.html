@@ -1,7 +1,8 @@
 <div class="test">
-    <h3 class="m-5 me-5 ">Histórico de Propostas</h3>
+
 
     <div>
+        <h3 class="m-5 me-5 ">Histórico de Propostas</h3>
         <table class="container table-responsive">
             <tr id="titule">
 
@@ -39,3 +40,7 @@
         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cancel')">Cancel</button>
     </div>
 </ng-template>
+<div *ngIf="listaHistorico.length === 0" class="text-center">
+    <p class="sorry">Desculpe :( <br> Não encontramos nenhum histórico de proposta. <br> Por favor, simule o financiamento para que os dados apareçam aqui.
+    </p>
+</div>

@@ -91,7 +91,7 @@ export class RealtyFormComponent implements OnInit {
       cliente.cep
       );
       
-      this.rs.salvarDados(proposta);
+      this.rs.salvarDados(proposta).subscribe(response => console.log(response));
       
           
     // chamar o servico de cliente e pegar os dados do cliente
@@ -154,11 +154,3 @@ export class RealtyFormComponent implements OnInit {
   }
 
 }
-
-// console.log('formr', this.formr.invalid);
-    // console.log('imovel', this.imovel?.invalid);
-    // console.log('renda', this.renda?.errors);
-    // console.log('renda-pristine', this.renda?.pristine)
-    //  console.log('teste1', this.teste1);
-    // console.log('entrada', this.entrada?.errors);
-    // console.log('parcelas', this.parcelas?.errors);

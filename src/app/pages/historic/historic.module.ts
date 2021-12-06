@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HistoricRoutingModule } from './historic-routing.module';
 import { HistoricListComponent } from './historic-list/historic-list.component';
 import { HistoricViewComponent } from './historic-view/historic-view.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { HistoricViewComponent } from './historic-view/historic-view.component';
   ],
   imports: [
     CommonModule,
-    HistoricRoutingModule
+    HistoricRoutingModule,
+    HttpClientModule
   ]
 })
 export class HistoricModule { }

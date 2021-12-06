@@ -15,8 +15,7 @@ export class ApprovedFormComponent implements OnInit {
   valorTotalFinanciado!: string;
   
 
-  constructor() {
-  }
+
 
   ngOnInit(): void {
     this.valorInicialParcela = RealtyService.model.valorParcela.toLocaleString('pt-BR');

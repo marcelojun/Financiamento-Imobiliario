@@ -3,6 +3,7 @@ import { AbstractControl } from "@angular/forms";
 export class Validacoes {
 
   static MaiorQue18Anos(controle: AbstractControl) {
+    
     if(controle.value==null||controle.value==undefined)
     return null;
     const nascimento:string = controle.value;
