@@ -1,7 +1,7 @@
 import { Proposta } from './../../realty/realty-form/shared/proposta.model';
 import { RealtyService } from './../../realty/realty-form/shared/realty.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HistoricViewComponent } from '../historic-view/historic-view.component';
 

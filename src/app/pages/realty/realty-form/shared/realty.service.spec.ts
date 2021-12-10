@@ -12,6 +12,7 @@ import { mockProposta } from 'src/app/pages/historic/mock/historic-mock';
 import { of } from 'rxjs';
 
 describe('RealtyService', () => {
+  let mocksrv: jasmine.SpyObj<RealtyService>;
   let srv: RealtyService;
   let httpServiceMock: jasmine.SpyObj<HttpClient>;
   let mockHttp: HttpTestingController
@@ -97,26 +98,21 @@ describe('RealtyService', () => {
     expect(service).toBeTruthy();
    });
 
-   it('should MostrarDados',()=>{
+  it('should MostrarDados',()=>{
      httpServiceMock.get.and.returnValue(of(mockProposta))
 
      srv.mostrarDados().subscribe({
        next:(response:Proposta[])=>{
-          expect(srv.mostrarDados).toHaveBeenCalled()
+          expect(mocksrv.mostrarDados).toHaveBeenCalled()
        }
      })  
    });
 
    it('should delete',()=>{
-     httpServiceMock.delete.and.returnValue(of(true))
-
-     srv.deletaDados(1).subscribe({
-       next:(response:any)=>{
-         expect(response).toEqual(true)
-         expect(srv.deletaDados).toHaveBeenCalled()
-       }
-     })
-     
+    srv.baseUrl= 'teste';
+    srv.deletaDados(2);
+    expect(httpServiceMock.delete).toHaveBeenCalledWith('teste/2');
+         
    })
 
 })

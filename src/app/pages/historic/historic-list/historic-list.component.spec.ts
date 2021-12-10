@@ -21,7 +21,7 @@ describe('HistoricListComponent', () => {
   beforeEach(async () => {
     //mockar chamada do ngOninit
     mockRealtyService= jasmine.createSpyObj('RealtyService',['mostrarDados','deletaDados','enviaHistoric']);
-    mockNgbModal= jasmine.createSpyObj('NgbModal',['Open']);
+    mockNgbModal= jasmine.createSpyObj('NgbModal',['open']);
     component= new  HistoricListComponent(mockRealtyService,mockNgbModal)
 
     mockRealtyService.mostrarDados.and.returnValue(of([mockProposta]))
@@ -53,13 +53,18 @@ describe('HistoricListComponent', () => {
 
     expect(component.listaHistorico.length).toBe(1)
   })
-  xit('Deve abrir OpenView', ()=>{
-    mockRealtyService.enviaHistoric(mockProposta);
-    mockNgbModal.open(HistoricViewComponent);
+  it('Deve abrir OpenView', ()=>{
+  
     component.openView(mockProposta)
-    expect(mockRealtyService.enviaHistoric).toHaveBeenCalled()
+    expect(mockRealtyService.enviaHistoric).toHaveBeenCalled();
+    expect( mockNgbModal.open).toHaveBeenCalled()
  
    })
+
+   //it('Should to OpenDelete',()=>{
+     //mockNgbModal.open([Proposta])
+    // expect()
+  // })
   
  
    
